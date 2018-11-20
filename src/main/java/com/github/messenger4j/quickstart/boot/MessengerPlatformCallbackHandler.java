@@ -105,7 +105,8 @@ public class MessengerPlatformCallbackHandler {
      */
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<String> verifyWebhook(@RequestParam(MODE_REQUEST_PARAM_NAME) final String mode,
-                                                @RequestParam(VERIFY_TOKEN_REQUEST_PARAM_NAME) final String verifyToken, @RequestParam(CHALLENGE_REQUEST_PARAM_NAME) final String challenge) {
+                                                @RequestParam(VERIFY_TOKEN_REQUEST_PARAM_NAME) final String verifyToken,
+                                                @RequestParam(CHALLENGE_REQUEST_PARAM_NAME) final String challenge) {
         logger.debug("Received Webhook verification request - mode: {} | verifyToken: {} | challenge: {}", mode, verifyToken, challenge);
         try {
             this.messenger.verifyWebhook(mode, verifyToken);
